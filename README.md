@@ -77,17 +77,17 @@ A complete Cake example can be found [here](https://github.com/SharpeRAD/Cake.Im
 
 ## Plays well with
 
-If your looking to store images in S3 check out [Cake.Services](https://github.com/SharpeRAD/Cake.AWS.S3).
+If your looking to store images in S3 check out [Cake.AWS.S3](https://github.com/SharpeRAD/Cake.AWS.S3).
 
-If your looking to distribute your images using CloudFront's CDN then check out [Cake.Services](https://github.com/SharpeRAD/Cake.AWS.CloudFront).
+If your looking to distribute your images using CloudFront's CDN then check out [Cake.AWS.CloudFront](https://github.com/SharpeRAD/Cake.AWS.CloudFront).
 
 
 
 ## License
 
-Copyright (c) 2015 - 2016 Phillip Sharpe
+Copyright (c) 2015 - 2017 Phillip Sharpe
 
-Cake.Topshelf is provided as-is under the MIT license. For more information see [LICENSE](https://github.com/SharpeRAD/Cake.ImageOptimizer/blob/master/LICENSE).
+Cake.ImageOptimizer is provided as-is under the MIT license. For more information see [LICENSE](https://github.com/SharpeRAD/Cake.ImageOptimizer/blob/master/LICENSE).
 
 
 
