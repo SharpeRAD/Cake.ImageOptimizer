@@ -1,7 +1,7 @@
 # Cake.ImageOptimizer
 Cake Build addin for optimizing images
 
-[![Build status](https://ci.appveyor.com/api/projects/status/smmki80m1s7yi7xe?svg=true)](https://ci.appveyor.com/project/SharpeRAD/cake-topshelf)
+[![Build status](https://ci.appveyor.com/api/projects/status/2yu75vddqumsliu4/branch/master?svg=true)](https://ci.appveyor.com/project/SharpeRAD/cake-imageoptimizer/branch/master)
 
 [![cakebuild.net](https://img.shields.io/badge/WWW-cakebuild.net-blue.svg)](http://cakebuild.net/)
 
