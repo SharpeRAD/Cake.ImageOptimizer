@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{171DEB60-7434-4D28-980E-43F1D94920A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cake.ImageOptimizer</RootNamespace>
+    <AssemblyName>Cake.ImageOptimizer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Cake.ImageOptimizer.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Cake.ImageOptimizer.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cake.Core, Version=0.17.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cake.Core.0.17.0\lib\net45\Cake.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aliases\ImageOptimizerAliases.cs" />
+    <Compile Include="Classes\Args\OptimizedFileEventArgs.cs" />
+    <Compile Include="Classes\File\OptimizedFile.cs" />
+    <Compile Include="Classes\Result\ImageOptimizerResult.cs" />
+    <Compile Include="Config\FileConfig.cs" />
+    <Compile Include="Factory\ImageOptimizerFactory.cs" />
+    <Compile Include="Interfaces\IImageOptimizer.cs" />
+    <Compile Include="Interfaces\IImageOptimizerFactory.cs" />
+    <Compile Include="Optimizers\Local\GifsicleOptimizer.cs" />
+    <Compile Include="Optimizers\Local\JpegTranOptimizer.cs" />
+    <Compile Include="Optimizers\Local\PngOutOptimizer.cs" />
+    <Compile Include="Optimizers\Base\BaseOptimizer.cs" />
+    <Compile Include="Optimizers\Base\BaseLocalOptimizer.cs" />
+    <Compile Include="Optimizers\Base\BaseRemoteOptimizer.cs" />
+    <Compile Include="Optimizers\Remote\Kraken\KrakenAuth.cs" />
+    <Compile Include="Optimizers\Remote\Kraken\KrakenOptimizer.cs" />
+    <Compile Include="Optimizers\Remote\Kraken\KrakenOptions.cs" />
+    <Compile Include="Optimizers\Remote\Kraken\KrakenResponse.cs" />
+    <Compile Include="Optimizers\Remote\PunyPng\PunyPngOptimizer.cs" />
+    <Compile Include="Optimizers\Remote\PunyPng\PunyPngResponse.cs" />
+    <Compile Include="Optimizers\Remote\SmushIt\SmushItOptimizer.cs" />
+    <Compile Include="Optimizers\Remote\SmushIt\SmushItResponse.cs" />
+    <Compile Include="Properties\Namespaces.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="Runners\PngOutRunner.cs" />
+    <Compile Include="Runners\JpegTranRunner.cs" />
+    <Compile Include="Settings\Bulk\ImageOptimizerSettings.cs" />
+    <Compile Include="Settings\Optimizer\KrakenResizeSettings.cs" />
+    <Compile Include="Settings\Optimizer\PunyPngOptimizerSettings.cs" />
+    <Compile Include="Settings\Optimizer\KrakenOptimizerSettings.cs" />
+    <Compile Include="Settings\Optimizer\BaseOptimizerSettings.cs" />
+    <Compile Include="Settings\Tool\ImageOptimizerToolSettings.cs" />
+    <Compile Include="Runners\GifsicleRunner.cs" />
+    <Compile Include="Interfaces\IBulkImageOptimizer.cs" />
+    <Compile Include="Factory\BulkImageOptimizer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
