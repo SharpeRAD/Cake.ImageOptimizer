@@ -169,6 +169,9 @@ Task("Copy-Files")
     CopyFileToDirectory(buildDir + "/Cake.ImageOptimizer.pdb", binDir);
     CopyFileToDirectory(buildDir + "/Cake.ImageOptimizer.xml", binDir);
 
+    CopyFileToDirectory(buildDir + "/Newtonsoft.Json.dll", binDir);
+    CopyFileToDirectory(buildDir + "/RestSharp.dll", binDir);
+
     CopyFiles(new FilePath[] { "LICENSE", "README.md", "ReleaseNotes.md" }, binDir);
 
 
@@ -177,6 +180,8 @@ Task("Copy-Files")
     CreateDirectory("./test/tools/Addins/Cake.ImageOptimizer/lib/net45/");
 
     CopyFileToDirectory(buildDir + "/Cake.ImageOptimizer.dll", "./test/tools/Addins/Cake.ImageOptimizer/lib/net45/");
+    CopyFileToDirectory(buildDir + "/Newtonsoft.Json.dll", "./test/tools/Addins/Cake.ImageOptimizer/lib/net45/");
+    CopyFileToDirectory(buildDir + "/RestSharp.dll", "./test/tools/Addins/Cake.ImageOptimizer/lib/net45/");
 });
 
 Task("Zip-Files")
