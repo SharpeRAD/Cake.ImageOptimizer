@@ -310,6 +310,12 @@ namespace Cake.ImageOptimizer
                         _SizeBefore += file.Length;
                         _SizeAfter += file.Length;
 
+                        // Copy to destination
+                        if (file.Path.FullPath.ToLower() != outputPath.FullPath.ToLower())
+                        {
+                            file.Copy(outputPath, true);
+                        }
+
                         _Log.Information("Skipped:  " + file.Path + " - " + result.ErrorMessage);
                     }
                     else
