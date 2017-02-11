@@ -1,8 +1,11 @@
+### New in 0.0.4 (Released 2017/02/11)
+* [Bug] Bulk optimizer was checking the config hash against itself instead of the actual image
+
 ### New in 0.0.3 (Released 2017/01/11)
-* Copy skipped images
+* [Improvement] Copy skipped images
 
 ### New in 0.0.2 (Released 2017/01/11)
-* Nuspec missing dependency packages
+* [Bug] Nuspec missing dependency packages
 
 ### New in 0.0.1 (Released 2017/01/08)
-* First release
+* [Feature] First release

@@ -141,7 +141,7 @@ namespace Cake.ImageOptimizer
             /// </summary>
             public bool RequiresOptimization(string originalHash)
             {
-                return this.OptimizedHash != this.OptimizedHash;
+                return this.OptimizedHash != originalHash;
             }
         #endregion
     }
