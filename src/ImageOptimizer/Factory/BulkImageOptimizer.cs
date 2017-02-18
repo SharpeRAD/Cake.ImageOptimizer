@@ -284,67 +284,75 @@ namespace Cake.ImageOptimizer
                 OptimizedFile optimizedFile = null;
                 string hash = this.GetHash(file);
 
-
-
-                if ((config == null) || config.RequiresOptimization(hash) || config.DifferentService(optimizer))
+                try
                 {
-                    //Optimize
-                    ImageOptimizerResult result = _OptimizerFactory.Optimize(optimizer, file.Path, outputPath);
-
-                    if ((result != null) && !result.HasError)
+                    if ((config == null) || config.RequiresOptimization(hash) || config.DifferentService(optimizer))
                     {
-                        //Optimzed
-                        optimizedFile = new OptimizedFile(file.Path, result.Service, result.ModifiedDate, hash, result.SizeBefore, result.SizeAfter);
+                        //Optimize
+                        ImageOptimizerResult result = _OptimizerFactory.Optimize(optimizer, file.Path, outputPath);
 
-                        _ImagesOptimized.Add(file.Path.FullPath);
-                        _SizeBefore += result.SizeBefore;
-                        _SizeAfter += result.SizeAfter;
+                        if ((result != null) && !result.HasError)
+                        {
+                            //Optimzed
+                            optimizedFile = new OptimizedFile(file.Path, result.Service, result.ModifiedDate, hash, result.SizeBefore, result.SizeAfter);
 
-                        _Log.Information("Optimized:  " + file.Path + " - Saved: " + result.SavedSize + " bytes (" + result.SavedPercent.ToString("N0") + "%)");
+                            _ImagesOptimized.Add(file.Path.FullPath);
+                            _SizeBefore += result.SizeBefore;
+                            _SizeAfter += result.SizeAfter;
+
+                            _Log.Information("Optimized:  " + file.Path + " - Saved: " + result.SavedSize + " bytes (" + result.SavedPercent.ToString("N0") + "%)");
+                        }
+                        else if ((result.ErrorMessage == "Unsupported File") || (result.ErrorMessage == "Invalid FileSize"))
+                        {
+                            //Skipped
+                            _ImagesSkipped++;
+
+                            _SizeBefore += file.Length;
+                            _SizeAfter += file.Length;
+
+                            // Copy to destination
+                            if (file.Path.FullPath.ToLower() != outputPath.FullPath.ToLower())
+                            {
+                                file.Copy(outputPath, true);
+                            }
+
+                            _Log.Information("Skipped:  " + file.Path + " - " + result.ErrorMessage);
+                        }
+                        else
+                        {
+                            //Errored
+                            _ImagesErrored++;
+
+                            _Log.Information("Errored:  " + file.Path + " - " + result.ErrorMessage);
+                        }
                     }
-                    else if ((result.ErrorMessage == "Unsupported File") || (result.ErrorMessage == "Invalid FileSize"))
+                    else
                     {
                         //Skipped
                         _ImagesSkipped++;
 
-                        _SizeBefore += file.Length;
-                        _SizeAfter += file.Length;
-
-                        // Copy to destination
-                        if (file.Path.FullPath.ToLower() != outputPath.FullPath.ToLower())
+                        if (config != null)
                         {
-                            file.Copy(outputPath, true);
+                            optimizedFile = new OptimizedFile(file.Path, config.Service, config.OptimizedDate, hash, config.SizeBefore, config.SizeAfter);
+
+                            _SizeBefore += config.SizeBefore;
+                            _SizeAfter += config.SizeAfter;
+                        }
+                        else
+                        {
+                            _SizeBefore += file.Length;
+                            _SizeAfter += file.Length;
                         }
 
-                        _Log.Information("Skipped:  " + file.Path + " - " + result.ErrorMessage);
-                    }
-                    else
-                    {
-                        //Errored
-                        _ImagesErrored++;
-
-                        _Log.Information("Errored:  " + file.Path + " - " + result.ErrorMessage);
+                        _Log.Information("Skipped:  " + file.Path + " - Saved: " + config.SavedSize + " bytes (" + config.SavedPercent.ToString("N0") + "%)");
                     }
                 }
-                else
+                catch(Exception ex)
                 {
-                    //Skipped
-                    _ImagesSkipped++;
+                    //Errored
+                    _ImagesErrored++;
 
-                    if (config != null)
-                    {
-                        optimizedFile = new OptimizedFile(file.Path, config.Service, config.OptimizedDate, hash, config.SizeBefore, config.SizeAfter);
-
-                        _SizeBefore += config.SizeBefore;
-                        _SizeAfter += config.SizeAfter;
-                    }
-                    else
-                    {
-                        _SizeBefore += file.Length;
-                        _SizeAfter += file.Length;
-                    }
-
-                    _Log.Information("Skipped:  " + file.Path + " - Saved: " + config.SavedSize + " bytes (" + config.SavedPercent.ToString("N0") + "%)");
+                    _Log.Information("Errored:  " + file.Path + " - " + ex.Message);
                 }
 
                 this.OnProgress(optimizedFile);

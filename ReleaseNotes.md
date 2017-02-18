@@ -1,3 +1,6 @@
+### New in 0.0.5 (Released 2017/02/18)
+* [Improvement] Catch bulk optimizer errors
+
 ### New in 0.0.4 (Released 2017/02/11)
 * [Bug] Bulk optimizer was checking the config hash against itself instead of the actual image
 
