@@ -1,5 +1,5 @@
 ﻿#region Using Statements
-    using Xunit;
+using Xunit;
 #endregion
 
 

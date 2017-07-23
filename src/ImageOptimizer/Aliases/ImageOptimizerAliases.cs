@@ -1,11 +1,10 @@
 ﻿#region Using Statements
-    using System.Collections.Generic;
+using System.Collections.Generic;
 
-    using Cake.Core;
-    using Cake.Core.IO;
-    using Cake.Core.Configuration;
-    using Cake.Core.Diagnostics;
-    using Cake.Core.Annotations;
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.Core.Diagnostics;
+using Cake.Core.Annotations;
 #endregion
 
 
@@ -18,6 +17,7 @@ namespace Cake.ImageOptimizer
     [CakeAliasCategory("ImageOptimizer")]
     public static class ImageOptimizerAliases
     {
+        #region Methods (3)
         private static IBulkImageOptimizer CreateBulkImageOptimizer(this ICakeContext context)
         {
             IImageOptimizerFactory factory = CreateImageOptimizerFactory(context.FileSystem, context.Environment, context.Log);
@@ -49,5 +49,6 @@ namespace Cake.ImageOptimizer
         {
             return context.CreateBulkImageOptimizer().Optimize(sourceDirectory, outputDirectory, settings);
         }
+        #endregion
     }
 }

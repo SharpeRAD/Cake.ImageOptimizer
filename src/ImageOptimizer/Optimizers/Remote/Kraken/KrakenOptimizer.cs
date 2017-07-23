@@ -1,13 +1,12 @@
 ﻿#region Using Statements
-    using System;
-    using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 
-    using Newtonsoft.Json;
+using Newtonsoft.Json;
 
-    using Cake.Core;
-    using Cake.Core.IO;
-    using Cake.Core.Diagnostics;
-    using Cake.Core.Configuration;
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.Core.Diagnostics;
 #endregion
 
 
@@ -20,43 +19,43 @@ namespace Cake.ImageOptimizer
     public class KrakenOptimizer : BaseRemoteOptimizer, IImageOptimizer
 	{
         #region Fields (3)
-            private string _ApiKey = "";
-            private string _SecretKey = "";
+        private string _ApiKey = "";
+        private string _SecretKey = "";
 
-            private bool _Lossy = false;
+        private bool _Lossy = false;
         #endregion
 
 
 
 
 
-        #region Constructor (2)
-            /// <summary>
-            /// Initializes a new instance of the <see cref="KrakenOptimizer" /> class.
-            /// </summary>
-            /// <param name="fileSystem">The file system.</param>
-            /// <param name="environment">The environment.</param>
-            /// <param name="log">The log.</param>
-            public KrakenOptimizer(IFileSystem fileSystem, ICakeEnvironment environment, ICakeLog log)
-                : this(fileSystem, environment, log, "", "")
-            {
+        #region Constructors (2)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="KrakenOptimizer" /> class.
+        /// </summary>
+        /// <param name="fileSystem">The file system.</param>
+        /// <param name="environment">The environment.</param>
+        /// <param name="log">The log.</param>
+        public KrakenOptimizer(IFileSystem fileSystem, ICakeEnvironment environment, ICakeLog log)
+            : this(fileSystem, environment, log, "", "")
+        {
 
-            }
+        }
 
-            /// <summary>
-            /// Initializes a new instance of the <see cref="KrakenOptimizer" /> class.
-            /// </summary>
-            /// <param name="fileSystem">The file system.</param>
-            /// <param name="environment">The environment.</param>
-            /// <param name="log">The log.</param>
-            /// <param name="apiKey">The Kraken API Key.</param>
-            /// <param name="secretKey">The Kraken API Secret Key.</param>
-            public KrakenOptimizer(IFileSystem fileSystem, ICakeEnvironment environment, ICakeLog log, string apiKey, string secretKey)
-                : base(fileSystem, environment, log)
-            {
-                _ApiKey = apiKey;
-                _SecretKey = secretKey;
-            }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="KrakenOptimizer" /> class.
+        /// </summary>
+        /// <param name="fileSystem">The file system.</param>
+        /// <param name="environment">The environment.</param>
+        /// <param name="log">The log.</param>
+        /// <param name="apiKey">The Kraken API Key.</param>
+        /// <param name="secretKey">The Kraken API Secret Key.</param>
+        public KrakenOptimizer(IFileSystem fileSystem, ICakeEnvironment environment, ICakeLog log, string apiKey, string secretKey)
+            : base(fileSystem, environment, log)
+        {
+            _ApiKey = apiKey;
+            _SecretKey = secretKey;
+        }
         #endregion
 
 

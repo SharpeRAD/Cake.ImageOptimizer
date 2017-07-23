@@ -1,6 +1,6 @@
 ﻿#region Using Statements
-    using System;
-    using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 #endregion
 
 
@@ -13,45 +13,45 @@ namespace Cake.ImageOptimizer
 	public class OptimizedFileEventArgs : EventArgs
 	{
         #region Constructors (2) 
-            /// <summary>
-            /// Initializes a new instance of the <see cref="OptimizedFileEventArgs"/> class.
-            /// </summary>
-            /// <param name="file">The optimzied file</param>
-            public OptimizedFileEventArgs(OptimizedFile file)
-		    {
-                this.Files = new List<OptimizedFile>() { file };
-		    }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OptimizedFileEventArgs"/> class.
+        /// </summary>
+        /// <param name="file">The optimzied file</param>
+        public OptimizedFileEventArgs(OptimizedFile file)
+		{
+            this.Files = new List<OptimizedFile>() { file };
+		}
 
-            /// <summary>
-            /// Initializes a new instance of the <see cref="OptimizedFileEventArgs"/> class.
-            /// </summary>
-            /// <param name="files">The optimzied files</param>
-            public OptimizedFileEventArgs(IList<OptimizedFile> files)
-            {
-                this.Files = files;
-            }
-		#endregion Constructors 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OptimizedFileEventArgs"/> class.
+        /// </summary>
+        /// <param name="files">The optimzied files</param>
+        public OptimizedFileEventArgs(IList<OptimizedFile> files)
+        {
+            this.Files = files;
+        }
+		#endregion
 
 
 
 
 
 		#region Properties (2) 
-            /// <summary>
-            /// Gets the optimized file
-            /// </summary>
-            public OptimizedFile File
+        /// <summary>
+        /// Gets the optimized file
+        /// </summary>
+        public OptimizedFile File
+        {
+            get
             {
-                get
-                {
-                    return this.Files[0];
-                }
+                return this.Files[0];
             }
+        }
 
-            /// <summary>
-            /// Gets the list of optimized files
-            /// </summary>
-            public IList<OptimizedFile> Files { get; private set; }
-		#endregion Properties 
+        /// <summary>
+        /// Gets the list of optimized files
+        /// </summary>
+        public IList<OptimizedFile> Files { get; private set; }
+		#endregion
 	}
 }

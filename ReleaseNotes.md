@@ -1,3 +1,7 @@
+### New in 0.0.6 (Released 2017/07/23)
+* [Improvement] Updated CakeContrib icon
+* [Bug] Not copying files with matching size
+
 ### New in 0.0.5 (Released 2017/02/18)
 * [Improvement] Catch bulk optimizer errors
 

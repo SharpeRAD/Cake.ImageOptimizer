@@ -9,10 +9,10 @@ namespace Cake.ImageOptimizer
     public class PunyPngOptimizerSettings : BaseOptimizerSettings
     {
         #region Properties (1)
-            /// <summary>
-            /// Gets or sets the API Key
-            /// </summary>
-            public string ApiKey { get; set; }
+        /// <summary>
+        /// Gets or sets the API Key
+        /// </summary>
+        public string ApiKey { get; set; }
         #endregion
     }
 }

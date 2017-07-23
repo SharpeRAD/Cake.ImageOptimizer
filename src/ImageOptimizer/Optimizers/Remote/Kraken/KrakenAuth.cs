@@ -1,5 +1,5 @@
 ﻿#region Using Statements
-    using System;
+using System;
 #endregion
 
 
@@ -9,18 +9,18 @@ namespace Cake.ImageOptimizer
     [Serializable]
     internal class KrakenAuth
 	{
-        #region Constructor (2)
-            public KrakenAuth()
-                : this("", "")
-            {
+        #region Constructors (2)
+        public KrakenAuth()
+            : this("", "")
+        {
 
-            }
+        }
 
-            public KrakenAuth(string key, string secret)
-            {
-                api_key = key;
-                api_secret = secret;
-            }
+        public KrakenAuth(string key, string secret)
+        {
+            api_key = key;
+            api_secret = secret;
+        }
         #endregion
 
 
@@ -28,9 +28,9 @@ namespace Cake.ImageOptimizer
 
 
         #region Properties (2)
-            public string api_key { get; set; }
+        public string api_key { get; set; }
 
-            public string api_secret { get; set; }
+        public string api_secret { get; set; }
         #endregion
     }
 }

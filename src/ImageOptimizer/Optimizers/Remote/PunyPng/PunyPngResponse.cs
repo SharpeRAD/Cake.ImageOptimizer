@@ -1,7 +1,7 @@
 ﻿#region Using Statements
-    using System;
+using System;
 
-    using Newtonsoft.Json;
+using Newtonsoft.Json;
 #endregion
 
 
@@ -11,6 +11,7 @@ namespace Cake.ImageOptimizer
     [Serializable]
 	internal class PunyPngResponse
 	{
+        #region Properties (6)
         [JsonProperty("original_url")]
 		public string OriginalUrl { get; set; }
 
@@ -34,5 +35,6 @@ namespace Cake.ImageOptimizer
 
         [JsonProperty("error")]
         public string Error { get; set; }
+        #endregion
 	}
 }
