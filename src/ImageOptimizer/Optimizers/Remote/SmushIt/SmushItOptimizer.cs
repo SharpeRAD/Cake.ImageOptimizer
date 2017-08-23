@@ -18,7 +18,7 @@ namespace Cake.ImageOptimizer
     /// </summary>
     public class SmushItOptimizer : BaseRemoteOptimizer, IImageOptimizer
     {
-        #region Constructor (1)
+        #region Constructor
         /// <summary>
         /// Initializes a new instance of the <see cref="PngOutOptimizer" /> class.
         /// </summary>
@@ -36,7 +36,7 @@ namespace Cake.ImageOptimizer
 
 
 
-		#region Properties (4) 
+		#region Properties 
         /// <summary>
         /// Gets the name of the optimizer.
         /// </summary>
@@ -90,7 +90,7 @@ namespace Cake.ImageOptimizer
 
 
 
-		#region Methods (4) 
+		#region Methods
         /// <summary>
         /// Configure the optimizer
         /// </summary>

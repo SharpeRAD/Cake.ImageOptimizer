@@ -18,7 +18,7 @@ namespace Cake.ImageOptimizer
     /// </summary>
     public class PunyPngOptimizer : BaseRemoteOptimizer, IImageOptimizer
     {
-        #region Fields (1)
+        #region Fields
         private string _Key = "441946bd843132b36fb27ce1d71106ee5b52e5fb";
         #endregion
         
@@ -26,7 +26,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Constructors (1)
+        #region Constructors
         /// <summary>
         /// Initializes a new instance of the <see cref="PngOutOptimizer" /> class.
         /// </summary>
@@ -44,7 +44,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Properties (5)
+        #region Properties
         /// <summary>
         /// Gets the name of the optimizer.
         /// </summary>
@@ -113,7 +113,7 @@ namespace Cake.ImageOptimizer
 
 
 
-		#region Methods (4) 
+		#region Methods
         /// <summary>
         /// Configure the optimizer
         /// </summary>

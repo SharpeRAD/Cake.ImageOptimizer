@@ -16,7 +16,7 @@ namespace Cake.ImageOptimizer
     /// </summary>
     public sealed class JpegTranRunner : Tool<ImageOptimizerToolSettings>
     {
-        #region Fields (1)
+        #region Fields
         private readonly ICakeEnvironment _Environment;
         #endregion
 
@@ -24,7 +24,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Constructors (1)
+        #region Constructors
         /// <summary>
         /// Initializes a new instance of the <see cref="JpegTranRunner"/> class.
         /// </summary>
@@ -43,7 +43,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Functions (4)
+        #region Methods
         /// <summary>
         /// Runs the tests in the specified assemblies, using the specified settings.
         /// </summary>

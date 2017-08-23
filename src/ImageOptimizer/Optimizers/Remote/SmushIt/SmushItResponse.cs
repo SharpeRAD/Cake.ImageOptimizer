@@ -11,7 +11,7 @@ namespace Cake.ImageOptimizer
     [Serializable]
 	internal class SmushItResponse
 	{
-        #region Properties (6)
+        #region Properties
         [JsonProperty("src")]
 		public string Source { get; set; }
 

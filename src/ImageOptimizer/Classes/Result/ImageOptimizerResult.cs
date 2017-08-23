@@ -13,7 +13,7 @@ namespace Cake.ImageOptimizer
     /// </summary>
 	public class ImageOptimizerResult
 	{
-		#region Constructors (1) 
+		#region Constructors
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageOptimizerResult" /> class.
         /// </summary>
@@ -33,7 +33,7 @@ namespace Cake.ImageOptimizer
 
 
 
-		#region Properties (10) 
+		#region Properties 
         /// <summary>
         /// Gets or sets the name of the service used to optimize the image
         /// </summary>

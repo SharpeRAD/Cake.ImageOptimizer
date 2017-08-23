@@ -8,7 +8,7 @@ namespace Cake.ImageOptimizer
     /// </summary>
     public class KrakenResizeSettings 
     {
-        #region Properties (3)
+        #region Properties
         /// <summary>
         /// Gets or sets the width of the new image
         /// </summary>

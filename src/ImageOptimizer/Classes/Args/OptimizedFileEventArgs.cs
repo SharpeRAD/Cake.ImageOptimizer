@@ -12,7 +12,7 @@ namespace Cake.ImageOptimizer
     /// </summary>
 	public class OptimizedFileEventArgs : EventArgs
 	{
-        #region Constructors (2) 
+        #region Constructors 
         /// <summary>
         /// Initializes a new instance of the <see cref="OptimizedFileEventArgs"/> class.
         /// </summary>
@@ -36,7 +36,7 @@ namespace Cake.ImageOptimizer
 
 
 
-		#region Properties (2) 
+		#region Properties 
         /// <summary>
         /// Gets the optimized file
         /// </summary>

@@ -18,7 +18,7 @@ namespace Cake.ImageOptimizer
 	/// </summary>
     public class ImageOptimizerFactory : IImageOptimizerFactory
 	{
-		#region Fields (3) 
+		#region Fields 
         private readonly IFileSystem _FileSystem;
 
         private IList<IImageOptimizer> _Optimizers = null;
@@ -29,7 +29,7 @@ namespace Cake.ImageOptimizer
 
 
 
-		#region Constructors (1) 
+		#region Constructors
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageOptimizerFactory" /> class.
         /// </summary>
@@ -52,7 +52,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Methods (10) 
+        #region Methods 
         /// <summary>
         /// Does the optimzer support the image
         /// </summary>

@@ -17,7 +17,7 @@ namespace Cake.ImageOptimizer
     [CakeAliasCategory("ImageOptimizer")]
     public static class ImageOptimizerAliases
     {
-        #region Methods (3)
+        #region Methods
         private static IBulkImageOptimizer CreateBulkImageOptimizer(this ICakeContext context)
         {
             IImageOptimizerFactory factory = CreateImageOptimizerFactory(context.FileSystem, context.Environment, context.Log);

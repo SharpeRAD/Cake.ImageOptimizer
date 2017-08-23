@@ -19,7 +19,7 @@ namespace Cake.ImageOptimizer
     /// </summary>
     public class BulkImageOptimizer : IBulkImageOptimizer
     {
-        #region Fields (8)
+        #region Fields
         private readonly IFileSystem _FileSystem;
         private readonly ICakeEnvironment _Environment;
         private readonly ICakeLog _Log;
@@ -38,7 +38,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Constructors (1)
+        #region Constructors
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseOptimizer" /> class.
         /// </summary>
@@ -78,7 +78,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Properties (8)
+        #region Properties
         /// <summary>
         /// Gets the list of paths to the optimized images
         /// </summary>
@@ -174,7 +174,6 @@ namespace Cake.ImageOptimizer
 
 
 
-        //Hash
         private string GetHash(IFile file)
         {
             using (var md5 = MD5.Create())
@@ -191,7 +190,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Methods (4)
+        #region Methods
         /// <summary>
         /// Optimizes Images from the settings SourceDirectory
         /// </summary>
@@ -380,7 +379,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Events (4)
+        #region Events
         /// <summary>
         /// Triggered when the optimizer finishes processing each image
         /// </summary>

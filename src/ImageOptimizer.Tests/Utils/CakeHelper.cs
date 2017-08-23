@@ -15,7 +15,7 @@ namespace Cake.ImageOptimizer.Tests
 {
     internal static class CakeHelper
     {
-        #region Methods (4)
+        #region Methods
         public static ICakeEnvironment CreateEnvironment()
         {
             var environment = new CakeEnvironment(new CakePlatform(), new CakeRuntime(), new DebugLog());

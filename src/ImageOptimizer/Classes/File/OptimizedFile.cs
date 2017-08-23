@@ -13,7 +13,7 @@ namespace Cake.ImageOptimizer
     /// </summary>
     public class OptimizedFile
     {
-		#region Constructors (1) 
+		#region Constructors 
         /// <summary>
         /// Initializes a new instance of the <see cref="OptimizedFile" /> class.
         /// </summary>
@@ -40,7 +40,7 @@ namespace Cake.ImageOptimizer
 
 
 
-		#region Properties (9) 
+		#region Properties
         /// <summary>
         /// Gets or sets the path to the image
         /// </summary>
@@ -127,7 +127,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Methods (2)
+        #region Methods
         /// <summary>
         /// Returns true if the services don't match
         /// </summary>

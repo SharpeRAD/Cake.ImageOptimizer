@@ -23,7 +23,7 @@ namespace Cake.ImageOptimizer
     /// </summary>
     public class FileConfig
     {
-        #region Fields (5)
+        #region Fields
         private readonly IFileSystem _FileSystem;
         private readonly ICakeEnvironment _Environment;
         private readonly ICakeLog _Log;
@@ -36,7 +36,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Constructors (1)
+        #region Constructors
         /// <summary>
         /// Initializes a new instance of the <see cref="FileConfig" /> class.
         /// </summary>
@@ -71,7 +71,7 @@ namespace Cake.ImageOptimizer
 
 
 
-		#region Properties (5)
+		#region Properties
         /// <summary>
         /// Gets the list of optimized files
         /// </summary>
@@ -162,7 +162,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Mwthods (6)
+        #region Mwthods
         /// <summary>
         /// Loads the list of already optimized files
         /// </summary>
@@ -205,7 +205,7 @@ namespace Cake.ImageOptimizer
                                 c.Attribute("Location").Value,
 
                                 c.Attribute("Service").Value,
-                                DateTime.Parse(c.Attribute("Date").Value, CultureInfo.CurrentCulture),
+                                DateTime.ParseExact(c.Attribute("Date").Value, "yyyy/MM/dd HH:mm", CultureInfo.CurrentCulture),
                                 c.Attribute("Hash").Value,
 
                                 Convert.ToDouble(c.Attribute("SizeBefore").Value),
@@ -267,7 +267,7 @@ namespace Cake.ImageOptimizer
                                     new XAttribute("Location", file.Path),
 
                                     new XAttribute("Service", file.Service),
-                                    new XAttribute("Date", file.OptimizedDate.ToString().Substring(0, 19)),
+                                    new XAttribute("Date", file.OptimizedDate.ToString("yyyy/MM/dd HH:mm")),
                                     new XAttribute("Hash", file.OptimizedHash),
 
                                     new XAttribute("SizeBefore", file.SizeBefore),

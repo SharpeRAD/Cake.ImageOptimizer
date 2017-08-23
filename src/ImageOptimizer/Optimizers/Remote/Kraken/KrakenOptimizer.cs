@@ -18,7 +18,7 @@ namespace Cake.ImageOptimizer
     /// </summary>
     public class KrakenOptimizer : BaseRemoteOptimizer, IImageOptimizer
 	{
-        #region Fields (3)
+        #region Fields
         private string _ApiKey = "";
         private string _SecretKey = "";
 
@@ -29,7 +29,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Constructors (2)
+        #region Constructors
         /// <summary>
         /// Initializes a new instance of the <see cref="KrakenOptimizer" /> class.
         /// </summary>
@@ -62,202 +62,202 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Properties (7)
-            /// <summary>
-            /// Gets the name of the optimizer.
-            /// </summary>
-            /// <value>The optimizer name.</value>
-            public override string Name
+        #region Properties
+        /// <summary>
+        /// Gets the name of the optimizer.
+        /// </summary>
+        /// <value>The optimizer name.</value>
+        public override string Name
+        {
+            get
             {
-                get
-                {
-                    return "Kraken";
-                }
+                return "Kraken";
             }
+        }
 
-            /// <summary>
-            /// A list of extensions supported by the Optimizer
-            /// </summary>
-            /// <value>The file extensions.</value>
-            public override IList<string> Extensions 
-            { 
-                get
-                {
-                    return new List<string>() { ".png", ".jpg", ".jpeg", ".gif" };
-                }
-            }
-
-            /// <summary>
-            /// Gets the endpoint URL of the web service.
-            /// </summary>
-		    protected override Uri Endpoint
-		    {
-			    get 
-                {
-                    return new Uri("https://api.kraken.io/v1/upload", UriKind.Absolute); 
-                }
-		    }
-
-            /// <summary>
-            /// Gets the parameter name of the file to be uploaded
-            /// </summary>
-            protected override string FileParameter
+        /// <summary>
+        /// A list of extensions supported by the Optimizer
+        /// </summary>
+        /// <value>The file extensions.</value>
+        public override IList<string> Extensions 
+        { 
+            get
             {
-                get
-                {
-                    return "file";
-                }
+                return new List<string>() { ".png", ".jpg", ".jpeg", ".gif" };
             }
+        }
 
-
-
-            /// <summary>
-            /// Gets or sets the Kraken API Key
-            /// </summary>
-            public string ApiKey
+        /// <summary>
+        /// Gets the endpoint URL of the web service.
+        /// </summary>
+		protected override Uri Endpoint
+		{
+			get 
             {
-                get
-                {
-                    return _ApiKey;
-                }
-                set
-                {
-                    _ApiKey = value;
-                }
+                return new Uri("https://api.kraken.io/v1/upload", UriKind.Absolute); 
             }
+		}
 
-            /// <summary>
-            /// Gets or sets the Kraken API Secret Key
-            /// </summary>
-            public string SecretKey
+        /// <summary>
+        /// Gets the parameter name of the file to be uploaded
+        /// </summary>
+        protected override string FileParameter
+        {
+            get
             {
-                get
-                {
-                    return _SecretKey;
-                }
-                set
-                {
-                    _SecretKey = value;
-                }
+                return "file";
             }
+        }
 
 
 
-            /// <summary>
-            /// Gets or sets weather to use lossless image compression
-            /// </summary>
-            public bool Lossy
+        /// <summary>
+        /// Gets or sets the Kraken API Key
+        /// </summary>
+        public string ApiKey
+        {
+            get
             {
-                get
-                {
-                    return _Lossy;
-                }
-                set
-                {
-                    _Lossy = value;
-                }
+                return _ApiKey;
             }
+            set
+            {
+                _ApiKey = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the Kraken API Secret Key
+        /// </summary>
+        public string SecretKey
+        {
+            get
+            {
+                return _SecretKey;
+            }
+            set
+            {
+                _SecretKey = value;
+            }
+        }
+
+
+
+        /// <summary>
+        /// Gets or sets weather to use lossless image compression
+        /// </summary>
+        public bool Lossy
+        {
+            get
+            {
+                return _Lossy;
+            }
+            set
+            {
+                _Lossy = value;
+            }
+        }
 		#endregion
 
 
 
 
 
-		#region Methods (4) 
-            /// <summary>
-            /// Configure the optimizer
-            /// </summary>
-            /// <param name="environment">The environment.</param>
-            public void Configure(ICakeEnvironment environment)
+		#region Methods
+        /// <summary>
+        /// Configure the optimizer
+        /// </summary>
+        /// <param name="environment">The environment.</param>
+        public void Configure(ICakeEnvironment environment)
+        {
+            this.ApiKey = environment.GetEnvironmentVariable("KRAKEN_API_KEY");
+            this.SecretKey = environment.GetEnvironmentVariable("KRAKEN_SECRET_KEY");
+
+            this.Lossy = Convert.ToBoolean(environment.GetEnvironmentVariable("KRAKEN_LOSSY"));
+
+            this.Timeout = Convert.ToInt32(environment.GetEnvironmentVariable("KRAKEN_TIMEOUT"));
+            this.FileSize = Convert.ToInt32(environment.GetEnvironmentVariable("KRAKEN_FILESIZE"));
+        }
+
+        /// <summary>
+        /// Creates a new object that is a copy of the current instance.
+        /// </summary>
+        public object Clone()
+        {
+            return new KrakenOptimizer(_FileSystem, _Environment, _Log, _ApiKey, _SecretKey);
+        }
+
+
+
+        /// <summary>
+        /// Populates the request data before posting it to the web optimizer
+        /// </summary>
+        /// <param name="path">The path to the file.</param>
+        /// <value>The file request parameters.</value>
+        protected override IDictionary<string, object> PopulatePostData(FilePath path)
+		{
+            Dictionary<string, object> parameters = new Dictionary<string, object>()
             {
-                this.ApiKey = environment.GetEnvironmentVariable("KRAKEN_API_KEY");
-                this.SecretKey = environment.GetEnvironmentVariable("KRAKEN_SECRET_KEY");
+				{ "options",  JsonConvert.SerializeObject(new KrakenOptions(new KrakenAuth(_ApiKey, _SecretKey), true, _Lossy)) }
+			};
 
-                this.Lossy = Convert.ToBoolean(environment.GetEnvironmentVariable("KRAKEN_LOSSY"));
+            return parameters;
+		}
 
-                this.Timeout = Convert.ToInt32(environment.GetEnvironmentVariable("KRAKEN_TIMEOUT"));
-                this.FileSize = Convert.ToInt32(environment.GetEnvironmentVariable("KRAKEN_FILESIZE"));
-            }
+        /// <summary>
+        /// Read the response from the web optimizer
+        /// </summary>
+        /// <param name="response">The response content.</param>
+        /// <param name="path">The path to the file.</param>
+        /// <value>The <see cref="ImageOptimizerResult" /> result.</value>
+        protected override ImageOptimizerResult ReadResponse(string response, FilePath path)
+		{
+            KrakenResponse res = JsonConvert.DeserializeObject<KrakenResponse>(response);
 
-            /// <summary>
-            /// Creates a new object that is a copy of the current instance.
-            /// </summary>
-            public object Clone()
+            //Check
+            if (res == null)
             {
-                return new KrakenOptimizer(_FileSystem, _Environment, _Log, _ApiKey, _SecretKey);
+                //Invalid
+                return new ImageOptimizerResult(this.Name, path, "Invalid Response");
             }
-
-
-
-            /// <summary>
-            /// Populates the request data before posting it to the web optimizer
-            /// </summary>
-            /// <param name="path">The path to the file.</param>
-            /// <value>The file request parameters.</value>
-            protected override IDictionary<string, object> PopulatePostData(FilePath path)
-		    {
-                Dictionary<string, object> parameters = new Dictionary<string, object>()
+            else if (!res.Success)
+            {
+                //Errored
+                return new ImageOptimizerResult(this.Name, path, String.IsNullOrEmpty(res.Message) ? "Unknown Error" : res.Message);
+            }
+            else if (res.Message == "This image can not be optimized any further")
+            {
+                //Skipped
+                return new ImageOptimizerResult(this.Name, path, "")
                 {
-				    { "options",  JsonConvert.SerializeObject(new KrakenOptions(new KrakenAuth(_ApiKey, _SecretKey), true, _Lossy)) }
-			    };
+                    SizeBefore = 0,
+                    SizeAfter = 0,
 
-                return parameters;
-		    }
+                    DownloadUrl = ""
+                };
+            }
+            else
+            {
+                //Check Url
+                Uri url;
 
-            /// <summary>
-            /// Read the response from the web optimizer
-            /// </summary>
-            /// <param name="response">The response content.</param>
-            /// <param name="path">The path to the file.</param>
-            /// <value>The <see cref="ImageOptimizerResult" /> result.</value>
-            protected override ImageOptimizerResult ReadResponse(string response, FilePath path)
-		    {
-                KrakenResponse res = JsonConvert.DeserializeObject<KrakenResponse>(response);
-
-                //Check
-                if (res == null)
+                if (!Uri.TryCreate(res.KrakedUrl, UriKind.Absolute, out url))
                 {
-                    //Invalid
-                    return new ImageOptimizerResult(this.Name, path, "Invalid Response");
+                    return new ImageOptimizerResult(this.Name, path, "Invalid Url");
                 }
-                else if (!res.Success)
+
+
+
+                //Success
+                return new ImageOptimizerResult(this.Name, path, "")
                 {
-                    //Errored
-                    return new ImageOptimizerResult(this.Name, path, String.IsNullOrEmpty(res.Message) ? "Unknown Error" : res.Message);
-                }
-                else if (res.Message == "This image can not be optimized any further")
-                {
-                    //Skipped
-                    return new ImageOptimizerResult(this.Name, path, "")
-                    {
-                        SizeBefore = 0,
-                        SizeAfter = 0,
+                    SizeBefore = res.OriginalSize,
+                    SizeAfter = res.KrakedSize,
 
-                        DownloadUrl = ""
-                    };
-                }
-                else
-                {
-                    //Check Url
-                    Uri url;
-
-                    if (!Uri.TryCreate(res.KrakedUrl, UriKind.Absolute, out url))
-                    {
-                        return new ImageOptimizerResult(this.Name, path, "Invalid Url");
-                    }
-
-
-
-                    //Success
-                    return new ImageOptimizerResult(this.Name, path, "")
-                    {
-                        SizeBefore = res.OriginalSize,
-                        SizeAfter = res.KrakedSize,
-
-                        DownloadUrl = url.AbsoluteUri
-                    };
-                }
-		    }
+                    DownloadUrl = url.AbsoluteUri
+                };
+            }
+		}
 		#endregion
 	}
 }

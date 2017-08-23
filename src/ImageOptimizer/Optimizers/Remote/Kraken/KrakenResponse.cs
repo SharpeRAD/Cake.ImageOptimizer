@@ -11,7 +11,7 @@ namespace Cake.ImageOptimizer
     [Serializable]
     internal class KrakenResponse
 	{
-        #region Properties (7)
+        #region Properties
         [JsonProperty("success")]
         public bool Success { get; set; }
 

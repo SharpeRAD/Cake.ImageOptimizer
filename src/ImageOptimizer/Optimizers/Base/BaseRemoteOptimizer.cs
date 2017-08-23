@@ -20,7 +20,7 @@ namespace Cake.ImageOptimizer
     /// </summary>
     public abstract class BaseRemoteOptimizer : BaseOptimizer
     {
-        #region Properties (2)
+        #region Properties
         /// <summary>
         /// Gets the endpoint URL of the web service.
         /// </summary>
@@ -36,7 +36,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Constructors (1)
+        #region Constructors
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseRemoteOptimizer" /> class.
         /// </summary>
@@ -54,7 +54,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Methods (4)
+        #region Methods
         /// <summary>
         /// Optimizes the specified file.
         /// </summary>

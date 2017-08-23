@@ -16,7 +16,7 @@ namespace Cake.ImageOptimizer
     /// </summary>
     public class GifsicleOptimizer : BaseLocalOptimizer, IImageOptimizer
 	{
-        #region Constructors (1)
+        #region Constructors
         /// <summary>
         /// Initializes a new instance of the <see cref="GifsicleOptimizer" /> class.
         /// </summary>
@@ -36,7 +36,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Properties (2)
+        #region Properties
         /// <summary>
         /// Gets the name of the optimizer.
         /// </summary>
@@ -66,7 +66,7 @@ namespace Cake.ImageOptimizer
 
 
 
-		#region Methods (3) 
+		#region Methods
         /// <summary>
         /// Configure the optimizer
         /// </summary>

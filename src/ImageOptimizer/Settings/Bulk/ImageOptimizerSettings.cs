@@ -11,7 +11,7 @@ namespace Cake.ImageOptimizer
     /// </summary>
     public class ImageOptimizerSettings
     {
-        #region Constructors (1)
+        #region Constructors
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageOptimizerSettings"/> class.
         /// </summary>
@@ -26,7 +26,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Properties (4)
+        #region Properties
         /// <summary>
         /// Gets or sets the location of the config file to use
         /// </summary>

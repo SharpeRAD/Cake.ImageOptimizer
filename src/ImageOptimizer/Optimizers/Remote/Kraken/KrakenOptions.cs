@@ -9,7 +9,7 @@ namespace Cake.ImageOptimizer
     [Serializable]
     internal class KrakenOptions
 	{
-        #region Constructors (2)
+        #region Constructors
         public KrakenOptions()
             : this(null, false, false)
         {
@@ -28,7 +28,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Properties (3)
+        #region Properties
         public KrakenAuth auth { get; set; }
 
         public bool wait { get; set; }

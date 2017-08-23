@@ -12,7 +12,7 @@ namespace Cake.ImageOptimizer
     /// </summary>
     public sealed class ImageOptimizerToolSettings : ToolSettings
     {
-        #region Properties (2)
+        #region Properties
         /// <summary>
         /// Gets or sets the source path of the image to optimize
         /// </summary>

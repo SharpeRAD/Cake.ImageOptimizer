@@ -15,7 +15,7 @@ namespace Cake.ImageOptimizer
 	/// </summary>
     public interface IImageOptimizer : ICloneable
 	{
-        #region Properties (3)
+        #region Properties
         /// <summary>
         /// Gets the name of the service used to optimize the image.
         /// </summary>
@@ -37,7 +37,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Methods (3)
+        #region Methods
         /// <summary>
         /// Does the optimzer support the image
         /// </summary>

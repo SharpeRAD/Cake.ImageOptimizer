@@ -8,7 +8,7 @@ namespace Cake.ImageOptimizer
     /// </summary>
     public class BaseOptimizerSettings
     {
-        #region Properties (2)
+        #region Properties
         /// <summary>
         /// Gets or sets the maximum file size to optimize.
         /// </summary>

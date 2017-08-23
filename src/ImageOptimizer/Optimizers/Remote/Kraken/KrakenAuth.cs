@@ -9,7 +9,7 @@ namespace Cake.ImageOptimizer
     [Serializable]
     internal class KrakenAuth
 	{
-        #region Constructors (2)
+        #region Constructors
         public KrakenAuth()
             : this("", "")
         {
@@ -27,7 +27,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Properties (2)
+        #region Properties
         public string api_key { get; set; }
 
         public string api_secret { get; set; }

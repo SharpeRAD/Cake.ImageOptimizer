@@ -17,7 +17,7 @@ namespace Cake.ImageOptimizer
     /// </summary>
     public abstract class BaseLocalOptimizer : BaseOptimizer
     {
-        #region Fields (2)
+        #region Fields
         /// <summary>
         ///  Represents a process runner.
         /// </summary>
@@ -33,7 +33,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Constructors (1)
+        #region Constructors
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseLocalOptimizer" /> class.
         /// </summary>
@@ -63,7 +63,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Methods (2)
+        #region Methods
         /// <summary>
         /// Optimizes the specified file.
         /// </summary>

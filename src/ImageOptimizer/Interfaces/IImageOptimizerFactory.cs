@@ -12,7 +12,7 @@ namespace Cake.ImageOptimizer
 	/// </summary>
     public interface IImageOptimizerFactory
 	{
-        #region Methods (10)
+        #region Methods
         /// <summary>
         /// Does the optimzer support the image
         /// </summary>

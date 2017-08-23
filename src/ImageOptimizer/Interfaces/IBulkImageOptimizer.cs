@@ -14,7 +14,7 @@ namespace Cake.ImageOptimizer
 	/// </summary>
     public interface IBulkImageOptimizer
 	{
-        #region Properties (7)
+        #region Properties
         /// <summary>
         /// Gets the list of paths to the optimized images
         /// </summary>
@@ -57,7 +57,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Events (2)
+        #region Events
         /// <summary>
         /// Triggered when the optimizer finishes processing each image
         /// </summary>
@@ -73,7 +73,7 @@ namespace Cake.ImageOptimizer
 
 
 
-        #region Methods (2)
+        #region Methods
         /// <summary>
         /// Optimizes Images from the settings SourceDirectory
         /// </summary>

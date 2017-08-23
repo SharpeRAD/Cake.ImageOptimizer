@@ -8,7 +8,7 @@ namespace Cake.ImageOptimizer
     /// </summary>
     public class KrakenOptimizerSettings : BaseOptimizerSettings
     {
-        #region Properties (4)
+        #region Properties
         /// <summary>
         /// Gets or sets the API Key
         /// </summary>

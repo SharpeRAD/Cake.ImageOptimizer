@@ -11,7 +11,7 @@ namespace Cake.ImageOptimizer
     [Serializable]
 	internal class PunyPngResponse
 	{
-        #region Properties (6)
+        #region Properties
         [JsonProperty("original_url")]
 		public string OriginalUrl { get; set; }
 
