@@ -17,17 +17,19 @@
       <tags>Cake Script Build Image Optimizer</tags>
 
        <dependencies>
-           <dependency id="Cake.Core" version="0.17.0" />
-           <dependency id="Newtonsoft.Json" version="9.0.1" />
+           <dependency id="Cake.Core" version="0.22.0" />
+           <dependency id="Newtonsoft.Json" version="10.0.3" />
            <dependency id="RestSharp" version="105.2.3" />
        </dependencies>
    </metadata>
 
    <files>
-      <file src="Cake.ImageOptimizer.dll" target="lib/net45" />
-      <file src="Cake.ImageOptimizer.xml" target="lib/net45" />
-      <file src="Newtonsoft.Json.dll" target="lib/net45" />
-      <file src="RestSharp.dll" target="lib/net45" />
+      <file src="net461/Cake.ImageOptimizer.dll" target="lib/net461" />
+      <file src="net461/Cake.ImageOptimizer.xml" target="lib/net461" />
+       
+      <file src="net461/Newtonsoft.Json.dll" target="lib/net461" />
+      <file src="net461/RestSharp.dll" target="lib/net461" />
+       
       <file src="LICENSE" />
    </files>
 </package>

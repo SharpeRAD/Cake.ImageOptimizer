@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{7B702943-4526-4B9D-B8DD-F50821850150}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{33AE8B80-1390-42EA-AE69-43DA12617BB0}"
+	ProjectSection(SolutionItems) = preProject
+		..\test\build.cake = ..\test\build.cake
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{409BC6DA-7E95-4CE2-899A-2B962EAAE1B8}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\appveyor.yml = ..\appveyor.yml
+		..\build.cake = ..\build.cake
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{04DD68ED-2973-4B5E-964B-9FA607BB218D}"
+	ProjectSection(SolutionItems) = preProject
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+		..\ReleaseNotes.md = ..\ReleaseNotes.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{3A8E8897-6C64-42B0-B336-7A46480003B9}"
+	ProjectSection(SolutionItems) = preProject
+		..\nuspec\Cake.ImageOptimizer.nuspec = ..\nuspec\Cake.ImageOptimizer.nuspec
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.ImageOptimizer.Tests", "Cake.ImageOptimizer.Tests\Cake.ImageOptimizer.Tests.csproj", "{A7154D3F-4633-419D-9B9E-745B502E1762}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.ImageOptimizer", "Cake.ImageOptimizer\Cake.ImageOptimizer.csproj", "{CDACCF06-4C88-444C-86B5-8A633429F5EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7154D3F-4633-419D-9B9E-745B502E1762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7154D3F-4633-419D-9B9E-745B502E1762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7154D3F-4633-419D-9B9E-745B502E1762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7154D3F-4633-419D-9B9E-745B502E1762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDACCF06-4C88-444C-86B5-8A633429F5EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDACCF06-4C88-444C-86B5-8A633429F5EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDACCF06-4C88-444C-86B5-8A633429F5EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDACCF06-4C88-444C-86B5-8A633429F5EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A7154D3F-4633-419D-9B9E-745B502E1762} = {33AE8B80-1390-42EA-AE69-43DA12617BB0}
+		{CDACCF06-4C88-444C-86B5-8A633429F5EE} = {7B702943-4526-4B9D-B8DD-F50821850150}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81A31B2C-9F95-4F8D-9E3F-B73773AB7DD7}
+	EndGlobalSection
+EndGlobal

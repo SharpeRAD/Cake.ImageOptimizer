@@ -5,9 +5,8 @@
 //------------------------------------------------------------------------------
 using System.Reflection;
 
-[assembly: AssemblyProduct("Cake.ImageOptimizer")]
-[assembly: AssemblyVersion("0.0.1")]
-[assembly: AssemblyFileVersion("0.0.1")]
-[assembly: AssemblyInformationalVersion("0.0.1")]
+[assembly: AssemblyVersion("0.0.7")]
+[assembly: AssemblyFileVersion("0.0.7")]
+[assembly: AssemblyInformationalVersion("0.0.7")]
 [assembly: AssemblyCopyright("Copyright (c) 2015 - 2017 Phillip Sharpe")]
 
