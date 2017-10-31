@@ -24,11 +24,11 @@
    </metadata>
 
    <files>
-      <file src="net461/Cake.ImageOptimizer.dll" target="lib/net461" />
-      <file src="net461/Cake.ImageOptimizer.xml" target="lib/net461" />
+      <file src="net46/Cake.ImageOptimizer.dll" target="lib/net46" />
+      <file src="net46/Cake.ImageOptimizer.xml" target="lib/net46" />
        
-      <file src="net461/Newtonsoft.Json.dll" target="lib/net461" />
-      <file src="net461/RestSharp.dll" target="lib/net461" />
+      <file src="net46/Newtonsoft.Json.dll" target="lib/net46" />
+      <file src="net46/RestSharp.dll" target="lib/net46" />
        
       <file src="LICENSE" />
    </files>
