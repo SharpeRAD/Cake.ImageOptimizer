@@ -1,35 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-      <id>Cake.ImageOptimizer</id>
-      <version>0.0.0</version>
-      <authors>Phillip Sharpe</authors>
-      <owners>Phillip Sharpe</owners>
-      <title>Cake.ImageOptimizer</title>
-      <description>Cake Build addon for optimizing images.</description>
-      <summary>Image optimizer addon for cake build.</summary>
-      <licenseUrl>https://github.com/SharpeRAD/Cake.ImageOptimizer/LICENSE</licenseUrl>
-      <projectUrl>https://github.com/SharpeRAD/Cake.ImageOptimizer</projectUrl>
-      <iconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</iconUrl>
-      <requireLicenseAcceptance>false</requireLicenseAcceptance>
-      <copyright>Copyright (c) Phillip Sharpe 2016</copyright>
-      <releaseNotes>Initial Release</releaseNotes>
-      <tags>Cake Script Build Image Optimizer</tags>
+    <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+        <id>Cake.ImageOptimizer</id>
+        <version>0.0.0</version>
+        <authors>Phillip Sharpe</authors>
+        <owners>Phillip Sharpe</owners>
+        <title>Cake.ImageOptimizer</title>
+        <description>Cake Build addon for optimizing images.</description>
+        <summary>Image optimizer addon for cake build.</summary>
+        <licenseUrl>https://github.com/SharpeRAD/Cake.ImageOptimizer/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/SharpeRAD/Cake.ImageOptimizer</projectUrl>
+        <iconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <copyright>Copyright (c) Phillip Sharpe 2016</copyright>
+        <releaseNotes>Initial Release</releaseNotes>
+        <tags>Cake Script Build Image Optimizer</tags>
 
-       <dependencies>
-           <dependency id="Cake.Core" version="0.22.0" />
-           <dependency id="Newtonsoft.Json" version="10.0.3" />
-           <dependency id="RestSharp" version="105.2.3" />
-       </dependencies>
-   </metadata>
+        <dependencies>
+            <dependency id="Cake.Core" version="0.26.0" />
+            <dependency id="Newtonsoft.Json" version="11.0.2" />
+            <dependency id="RestSharp" version="106.2.1" />
+        </dependencies>
+    </metadata>
 
-   <files>
-      <file src="net46/Cake.ImageOptimizer.dll" target="lib/net46" />
-      <file src="net46/Cake.ImageOptimizer.xml" target="lib/net46" />
-       
-      <file src="net46/Newtonsoft.Json.dll" target="lib/net46" />
-      <file src="net46/RestSharp.dll" target="lib/net46" />
-       
-      <file src="LICENSE" />
-   </files>
+    <files>
+        <file src="net46/Newtonsoft.Json.dll" target="lib/net46" />
+        <file src="net46/RestSharp.dll" target="lib/net46" />
+
+        <file src="net46/Cake.ImageOptimizer.dll" target="lib/net46" />
+        <file src="net46/Cake.ImageOptimizer.xml" target="lib/net46" />
+        <file src="net46/Cake.ImageOptimizer.pdb" target="lib/net46" />
+
+        <file src="netstandard2.0/Cake.AWS.EC2.dll" target="lib/netstandard2.0" />
+        <file src="netstandard2.0/Cake.AWS.EC2.xml" target="lib/netstandard2.0" />
+        <file src="netstandard2.0/Cake.AWS.EC2.pdb" target="lib/netstandard2.0" />
+        <file src="netstandard2.0/Cake.AWS.EC2.deps.json" target="lib/netstandard2.0" />
+
+        <file src="LICENSE" />
+    </files>
 </package>
