@@ -46,7 +46,7 @@ namespace Cake.ImageOptimizer.Tests
         {
             ICakeEnvironment enviroment = CakeHelper.CreateEnvironment();
 
-            return new CakeContext(new FileSystem(), enviroment, new Globber(new FileSystem(), enviroment), new DebugLog(), CreateArguments(), new ProcessRunner(enviroment, new DebugLog()), new WindowsRegistry(), new ToolLocator(enviroment, new ToolRepository(enviroment), new ToolResolutionStrategy(new FileSystem(), enviroment, new Globber(new FileSystem(), enviroment), CreateConfiguration())));
+            return new CakeContext(new FileSystem(), enviroment, new Globber(new FileSystem(), enviroment), new DebugLog(), CreateArguments(), new ProcessRunner(enviroment, new DebugLog()), new WindowsRegistry(), new ToolLocator(enviroment, new ToolRepository(enviroment), new ToolResolutionStrategy(new FileSystem(), enviroment, new Globber(new FileSystem(), enviroment), CreateConfiguration())), new CakeDataService());
         }
         #endregion
     }

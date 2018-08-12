@@ -14,7 +14,7 @@ namespace Cake.ImageOptimizer.Tests
             ImageOptimizerSettings settings = new ImageOptimizerSettings()
             {
                 Services = "Kraken",
-                SearchFilter = "*.png",
+                SearchFilter = "*",
                 ConfigFile = "./Files/config.xml"
             };
 

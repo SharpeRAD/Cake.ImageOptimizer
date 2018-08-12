@@ -312,6 +312,13 @@ namespace Cake.ImageOptimizer
                         // Copy to destination
                         if (file.Path.FullPath.ToLower() != outputPath.FullPath.ToLower())
                         {
+                            IDirectory parent = _FileSystem.GetDirectory(outputPath.GetDirectory());
+
+                            if (!parent.Exists)
+                            {
+                                parent.Create();
+                            }
+
                             file.Copy(outputPath, true);
                         }
 
@@ -346,7 +353,7 @@ namespace Cake.ImageOptimizer
                     _Log.Information("Skipped:  " + file.Path + " - Saved: " + config.SavedSize + " bytes (" + config.SavedPercent.ToString("N0") + "%)");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 //Errored
                 _ImagesErrored++;

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <AssemblyTitle>Cake.ImageOptimizer.Tests</AssemblyTitle>
         <AssemblyName>Cake.ImageOptimizer.Tests</AssemblyName>
@@ -19,8 +19,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Cake.Core" Version="0.26.0" />
-        <PackageReference Include="Cake.Testing" Version="0.26.0" />
+        <PackageReference Include="Cake.Core" Version="0.29.0" />
+        <PackageReference Include="Cake.Testing" Version="0.29.0" />
 
         <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
         <PackageReference Include="RestSharp" Version="106.2.1" />
