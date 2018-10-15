@@ -30,6 +30,7 @@ Cake Build addin for optimizing images
 ## Referencing
 
 [![NuGet Version](http://img.shields.io/nuget/v/Cake.ImageOptimizer.svg?style=flat)](https://www.nuget.org/packages/Cake.ImageOptimizer/)
+[![NuGet Downloads](http://img.shields.io/nuget/dt/Cake.ImageOptimizer.svg?style=flat)](https://www.nuget.org/packages/Cake.ImageOptimizer/)
 
 Cake.ImageOptimizer is available as a nuget package from the package manager console:
 
