@@ -29,7 +29,7 @@ namespace Cake.ImageOptimizer
         /// <summary>
         /// Gets or sets the quality of JPEG compression
         /// </summary>
-        public int Quantity { get; set; }
+        public int Quality { get; set; }
         #endregion
     }
 }

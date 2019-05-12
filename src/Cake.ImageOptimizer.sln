@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{409BC6DA
 		..\.gitignore = ..\.gitignore
 		..\appveyor.yml = ..\appveyor.yml
 		..\build.cake = ..\build.cake
+		..\cake.config = ..\cake.config
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{04DD68ED-2973-4B5E-964B-9FA607BB218D}"
@@ -29,9 +30,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{3A8E8897
 		..\nuspec\Cake.ImageOptimizer.nuspec = ..\nuspec\Cake.ImageOptimizer.nuspec
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.ImageOptimizer.Tests", "Cake.ImageOptimizer.Tests\Cake.ImageOptimizer.Tests.csproj", "{A7154D3F-4633-419D-9B9E-745B502E1762}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cake.ImageOptimizer.Tests", "Cake.ImageOptimizer.Tests\Cake.ImageOptimizer.Tests.csproj", "{A7154D3F-4633-419D-9B9E-745B502E1762}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.ImageOptimizer", "Cake.ImageOptimizer\Cake.ImageOptimizer.csproj", "{CDACCF06-4C88-444C-86B5-8A633429F5EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cake.ImageOptimizer", "Cake.ImageOptimizer\Cake.ImageOptimizer.csproj", "{CDACCF06-4C88-444C-86B5-8A633429F5EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
