@@ -40,13 +40,19 @@ namespace Cake.ImageOptimizer.Tests
             return environment;
         }
 
+        public static IToolLocator CreateToolLocator(ICakeEnvironment environment, ICakeConfiguration config)
+        {
+            return new ToolLocator(environment, new ToolRepository(environment), new ToolResolutionStrategy(new FileSystem(), environment, new Globber(new FileSystem(), environment), config));
+        }
 
 
         public static ICakeContext CreateContext()
         {
             ICakeEnvironment enviroment = CakeHelper.CreateEnvironment();
+            ICakeConfiguration config = CakeHelper.CreateConfiguration();
+            IToolLocator toolLocator = CakeHelper.CreateToolLocator(enviroment, config);
 
-            return new CakeContext(new FileSystem(), enviroment, new Globber(new FileSystem(), enviroment), new DebugLog(), CreateArguments(), new ProcessRunner(enviroment, new DebugLog()), new WindowsRegistry(), new ToolLocator(enviroment, new ToolRepository(enviroment), new ToolResolutionStrategy(new FileSystem(), enviroment, new Globber(new FileSystem(), enviroment), CreateConfiguration())), new CakeDataService());
+            return new CakeContext(new FileSystem(), enviroment, new Globber(new FileSystem(), enviroment), new DebugLog(), CreateArguments(), new ProcessRunner(new FileSystem(), enviroment, new DebugLog(), toolLocator, config), new WindowsRegistry(), toolLocator, new CakeDataService(), config);
         }
         #endregion
     }
