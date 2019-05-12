@@ -20,6 +20,7 @@ namespace Cake.ImageOptimizer.Tests
         public static ICakeEnvironment CreateEnvironment()
         {
             var environment = FakeEnvironment.CreateWindowsEnvironment();
+
             environment.WorkingDirectory = Directory.GetCurrentDirectory();
             environment.WorkingDirectory = environment.WorkingDirectory.Combine("../../../");
 
@@ -28,16 +29,12 @@ namespace Cake.ImageOptimizer.Tests
 
         public static ICakeArguments CreateArguments()
         {
-            var environment = Substitute.For<ICakeArguments>();
-
-            return environment;
+            return Substitute.For<ICakeArguments>();
         }
         
         public static ICakeConfiguration CreateConfiguration()
         {
-            var environment = Substitute.For<ICakeConfiguration>();
-
-            return environment;
+            return Substitute.For<ICakeConfiguration>();
         }
 
         public static IToolLocator CreateToolLocator(ICakeEnvironment environment, ICakeConfiguration config)

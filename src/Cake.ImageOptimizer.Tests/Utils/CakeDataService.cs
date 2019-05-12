@@ -18,8 +18,7 @@ namespace Cake.ImageOptimizer.Tests
             _data = new Dictionary<Type, object>();
         }
 
-        public TData Get<TData>()
-            where TData : class
+        public TData Get<TData>() where TData : class
         {
             if (_data.TryGetValue(typeof(TData), out var data))
             {
@@ -27,20 +26,22 @@ namespace Cake.ImageOptimizer.Tests
                 {
                     return typedData;
                 }
+
                 var message = $"Context data exists but is of the wrong type ({data.GetType().FullName}).";
                 throw new InvalidOperationException(message);
             }
+
             throw new InvalidOperationException("The context data has not been setup.");
         }
 
-        public void Add<TData>(TData value)
-            where TData : class
+        public void Add<TData>(TData value) where TData : class
         {
             if (_data.ContainsKey(typeof(TData)))
             {
                 var message = $"Context data of type '{typeof(TData).FullName}' has already been registered.";
                 throw new InvalidOperationException(message);
             }
+
             _data.Add(typeof(TData), value);
         }
     }
